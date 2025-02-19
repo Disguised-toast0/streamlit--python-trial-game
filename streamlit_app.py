@@ -26,7 +26,7 @@ if user_choice:
     choice_placeholder = st.empty()
     result_placeholder = st.empty()
 
-    thinking_placeholder.markdown("<h2 style='text-align:center;'>🤔 Computer is thinking...</h2>", unsafe_allow_html=True)
+    thinking_placeholder.markdown("<p style='text-align:center; font-size: 30px;'>🤔 Computer is thinking...</p>", unsafe_allow_html=True)
     time.sleep(1.5)  
 
     computer_choice = random.choice(list(choices.keys()))
@@ -34,7 +34,7 @@ if user_choice:
 
  
     choice_placeholder.markdown(f"""
-        <div style='text-align:center; font-size: 50px;'>
+        <div style='text-align:center; font-size: 30px;'>
             <b>You Chose:</b> {choices[user_choice]} {user_choice.capitalize()} <br>
             <b>Computer Chose:</b> {choices[computer_choice]} {computer_choice.capitalize()}
         </div>
@@ -43,12 +43,12 @@ if user_choice:
     time.sleep(0.2) 
 
     if user_choice == computer_choice:
-        result_placeholder.markdown("<h1 style='text-align:center; color:orange;'>🤝 It's a Draw! shit! </h1>", unsafe_allow_html=True)
+        result_placeholder.markdown("<p style='text-align:center; color:orange; font-size: 40px; '>🤝 It's a Draw! shit! 🤝 </p>", unsafe_allow_html=True)
     elif (user_choice == "snake" and computer_choice == "water") or \
          (user_choice == "water" and computer_choice == "gun") or \
          (user_choice == "gun" and computer_choice == "snake"):
-        result_placeholder.markdown("<h1 style='text-align:center; color:green;'>🎉 You Won! Damn 🤬</h1>", unsafe_allow_html=True)
+        result_placeholder.markdown("<p style='text-align:center; color:green; font-size: 40px;'>🎉 You Won! Damn 🤬</p>", unsafe_allow_html=True)
     else:
-        result_placeholder.markdown("<h1 style='text-align:center; color:red;'>😈 Computer Wins! Looser 😈 </h1>", unsafe_allow_html=True)
+        result_placeholder.markdown("<p style='text-align:center; color:red; font-size: 40px;'>😈 Computer Wins! Looser 😈 </p>", unsafe_allow_html=True)
 
 st.write("Click a button above to play again!")
